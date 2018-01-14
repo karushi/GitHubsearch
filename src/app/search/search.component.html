@@ -1,5 +1,28 @@
-<h1>GitHubsearch</h1>
-               <div class="search">
-                <input type="text"name="search" placeholder="" />
-                <button class="btn btn-large btn-dark">Search</button>
- </div>
+<!-- <h1>GitHubsearch</h1>
+
+  <input name="title" search />
+  <button class="btn btn-large">search</button> -->
+<div *ngIf="search">
+
+    <div class="panel panel-default">
+    <div Class= "panel-heading">
+     {{search.name}}<small>{{search.login}}</small>
+     <span *ngIf="search.company">,works at{{search.company}}</span>
+     {{search.location}}
+   </div>
+   <div class="panel-body">
+     <div class="col-sm-3">
+       <img src="{{search.avatar_url}}" class="rounded-circle img-responsive" style='width:100%;'
+       alt="search image"/>
+     </div>
+    <div class="col-sm-3">
+          <ul class="list-group">
+            <li class="list-group-item" *ngIf="search.bio">{{search.bio}}</li>
+            <li class="list-group-item" *ngIf="search.bio">Available for hire</li>
+            <li class="list-group-item" *ngIf="search.bio">{{search.bio}}</li>
+            <li class="list-group-item" *ngIf="search.bio">{{search.hirersblr}}</li>
+          </ul>
+    </div>
+   </div>
+  </div>
+</div>
