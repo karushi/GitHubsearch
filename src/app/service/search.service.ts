@@ -29,3 +29,4 @@ updateSearch(username:string){
 this.username =username;
 
 }
+}
