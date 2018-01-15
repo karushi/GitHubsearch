@@ -9,11 +9,16 @@ import {  SearchService } from '../service/search.service';
 export class SearchComponent implements OnInit {
 
   search: any[];
+  repos: any[];
   constructor(private SearchService:  SearchService  ) {
     this.SearchService.getProfileInfo().subscribe(search =>{
     console.log(search);
     this.search = search;
 
+    })
+    this.SearchService.getProfileRepos().subscribe(repos =>{
+      console.log(repos);
+      this.repos= repos;
     });
    }
 

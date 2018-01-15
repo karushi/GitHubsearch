@@ -1,7 +1,11 @@
-<!-- <h1>GitHubsearch</h1>
+<form action="">
+  <div class="from-group">
+  <input type="text" class="from-control" placeholder="Search git user with username" />
 
-  <input name="title" search />
-  <button class="btn btn-large">search</button> -->
+  </div>
+
+
+</form>
 <div *ngIf="search">
 
     <div class="panel panel-default">
@@ -15,14 +19,37 @@
        <img src="{{search.avatar_url}}" class="rounded-circle img-responsive" style='width:100%;'
        alt="search image"/>
      </div>
-    <div class="col-sm-3">
+    <div class="col-sm-5">
           <ul class="list-group">
             <li class="list-group-item" *ngIf="search.bio">{{search.bio}}</li>
             <li class="list-group-item" *ngIf="search.bio">Available for hire</li>
             <li class="list-group-item" *ngIf="search.bio">{{search.bio}}</li>
-            <li class="list-group-item" *ngIf="search.bio">{{search.hirersblr}}</li>
+            <li class="list-group-item" *ngIf="search.email">{{search.email}}</li>
           </ul>
+    </div>
+    <div class="col-sm-4">
+      <div>
+        <p>
+          <span class="label label-default">{{search.followers}} followers</span>
+          <span class="label label-primary">following {{search.following}}</span>
+          <span class="label label-success">{{search.public_gists}}public gists</span>
+          <span class="label label-info">{{search.public_repos}}followers</span>
+        </p>
+        <p>
+       <a href="{{search.html_url}}"class="btn btn-success btn-sm">view search on github </a></p>
+       <div class="panel panel-default">
+         <div class="panel-heading">
+          <h3 class="panel-title">Repos</h3>
+         </div>
+       <div class="panel-body" *ngFor="let repo of repos">
+        <p class="clearfix">
+          {{repo.name}}<a href="{{repo.html_url}}"targer="_blank" class="btn btn-sm btn-warning pull-right">view this project on github></a></p>
+          <p>  {{repo.description}}  </p>
+        </div>
+       </div>
+      </div>
     </div>
    </div>
   </div>
+
 </div>
